@@ -3,7 +3,7 @@ $conf = json_decode(file_get_contents(__DIR__."/conf.json"), true);
 $conf_db = $conf['db'];
 
 $db = new mysqli($conf_db['host'], $conf_db['username'], $conf_db['password'], $conf_db['database']);
-$sql = "select * from etl_jobs_run where status = 0";
+$sql = "select * from etl_jobs_run where status = 0 and host = '".$conf['host']."'";
 $stmt = $db->query($sql);
 if($stmt){
     $jobs = $stmt->fetch_all(MYSQLI_ASSOC);
