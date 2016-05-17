@@ -10,7 +10,7 @@ do
 {
     cmd="$php $path/etl.php $i"
     echo $cmd
-    `$cmd`
+    echo `$cmd`
     sleep 3
 }&
 done
@@ -23,6 +23,7 @@ do
 {
     cmd="$php $path/etl.php $i"
     echo $cmd
+    echo `$cmd`
     sleep 3
 }&
 done
